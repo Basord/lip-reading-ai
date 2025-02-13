@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+Allow: /legal
+Allow: /privacy-policy
+Allow: /terms-of-service
+Allow: /public/css/
+Allow: /Articles/index
+Sitemap: https://lip-reading.com/sitemap.xml

@@ -1,0 +1,10 @@
+permalink: pretty
+include: [".well-known"]
+exclude: ["README.md", "LICENSE"]
+
+# Custom 404 page
+defaults:
+  - scope:
+      path: "404.html"
+    values:
+      permalink: /404.html

@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How to Use AI Lip Reading on Replicate: A Complete Guide for Beginners - Lip Reading AI</title>
+    
+    <!-- Enhanced Meta Tags -->
+    <meta name="description" content="Learn how to Lip Read Videos quickly and with unparalleled precision with AI on Replicate">
+    <link rel="canonical" href="https://lip-reading.com/articles/confusing-sounds-when-lip-reading">
+    
+    <!-- Open Graph Tags -->
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="How to Use AI Lip Reading on Replicate: A Complete Guide for Beginners">
+    <meta property="og:description" content="Learn how to Lip Read Videos quickly and with unparalleled precision with AI on Replicate">
+    <meta property="og:url" content="https://lip-reading.com/articles/confusing-sounds-when-lip-reading">
+
+    <link href="../public/css/output.css" rel="stylesheet">
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "headline": "How to Use AI Lip Reading on Replicate: A Complete Guide for Beginners",
+        "description": "Learn how to Lip Read Videos quickly and with unparalleled precision with AI on Replicate",
+        "dateModified": "Fevruary 2022",
+        "publisher": {
+            "@type": "Organization",
+            "name": "Lip-Reading.com"
+        }
+    }
+    </script>
+
+    <!-- Article-specific styles - Same as previous article -->
+    <style>
+        /* Dark theme header/footer with light content area */
+        .article-header {
+            background: #1e1e1e;
+            padding: 4rem 1rem;
+        }
+        
+        .article-content {
+            background: #ffffff;
+            color: #1f2937;
+            padding: 2rem 0;
+        }
+        
+        .article-container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+        
+        /* Typography */
+        .article-title {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: #ffffff;
+            margin-bottom: 1rem;
+        }
+        
+        .article-meta {
+            color: #9ca3af;
+            font-size: 1rem;
+        }
+        
+        .article-content h2 {
+            font-size: 1.875rem;
+            font-weight: bold;
+            color: #1f2937;
+            margin: 2.5rem 0 1.5rem 0;
+        }
+        
+        .article-content h3 {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #1f2937;
+            margin: 2rem 0 1rem 0;
+        }
+        
+        .article-content p {
+            font-size: 1.125rem;
+            line-height: 1.75;
+            color: #4b5563;
+            margin-bottom: 1.5rem;
+        }
+        
+        /* Content Components */
+        .info-box {
+            background: #f3f4f6;
+            border: 1px solid #e5e7eb;
+            border-radius: 0.5rem;
+            padding: 1.5rem;
+            margin: 2rem 0;
+        }
+        
+        .strategy-box {
+            background: #fee2e2;
+            border: 1px solid #fecaca;
+            border-radius: 0.5rem;
+            padding: 1.5rem;
+            margin: 2rem 0;
+        }
+        
+        .example-list {
+            list-style-type: disc;
+            margin-left: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .example-list li {
+            margin-bottom: 0.5rem;
+            color: #4b5563;
+        }
+        
+        /* Related Articles Section */
+        .related-articles {
+            background: #1e1e1e;
+            padding: 4rem 1rem;
+            color: #ffffff;
+        }
+        
+        .related-card {
+            background: #2a2a2a;
+            border-radius: 0.5rem;
+            padding: 1.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        /* Table of Contents */
+        .toc {
+            background: #f3f4f6;
+            border-radius: 0.5rem;
+            padding: 1.5rem;
+            margin-bottom: 3rem;
+            border: 1px solid #e5e7eb;
+        }
+
+        .toc h2 {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #1f2937;
+            margin-bottom: 1rem;
+            border-bottom: 2px solid #fee2e2;
+            padding-bottom: 0.5rem;
+        }
+
+        .toc-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .toc-list li {
+            margin-bottom: 0.75rem;
+        }
+
+        .toc-list li.toc-h2 {
+            margin-top: 0.5rem;
+        }
+
+        .toc-list li.toc-h3 {
+            padding-left: 1.5rem;
+            font-size: 0.95rem;
+            color: #6b7280;
+        }
+
+        .toc-list a {
+            color: #4b5563;
+            text-decoration: none;
+            transition: color 0.2s;
+            display: inline-block;
+        }
+
+        .toc-list a:hover {
+            color: #dc2626;
+        }
+
+        .breadcrumb-container {
+            white-space: nowrap;
+            overflow-x: auto;
+            -webkit-overflow-scrolling: touch;
+            scrollbar-width: none;
+            -ms-overflow-style: none;
+        }
+
+        .breadcrumb-container::-webkit-scrollbar {
+            display: none;
+        }
+
+        .breadcrumb-text {
+            max-width: 550px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            display: inline-block;
+        }
+        
+        .logo-text {
+            position: absolute;
+            margin-top: 25px;            
+            align-items: center;
+            left: 3%;
+            font-size: 1.5rem;
+        }
+        .logo-gradient {            
+            padding-bottom: 0.1em;
+        }
+        
+        /* Progress bar */
+        .progress-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: #f3f4f6;
+            z-index: 1000;
+        }
+
+        .progress-bar {
+            height: 100%;
+            background: linear-gradient(to right, #dc2626, #ef4444);
+            width: 0%;
+            transition: width 0.1s ease;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .article-title {
+                font-size: 2rem;
+            }
+            
+            .article-content h2 {
+                font-size: 1.5rem;
+            }
+            
+            .article-content h3 {
+                font-size: 1.25rem;
+            }
+            
+            .article-container {
+                padding: 0 1rem;
+            }
+            .logo-text {
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Progress Bar -->
+    <div class="progress-container">
+        <div class="progress-bar" id="progressBar"></div>
+    </div>
+
+    <a class="flex items-center text-red-300 no-underline hover:no-underline font-bold text-2xl lg:text-4xl logo-text" href="../index.html" title="Lip Reading AI - Homepage">
+        Lip-<span class="logo-gradient bg-clip-text text-transparent bg-gradient-to-r from-red-light via-red-medium to-red-dark">Reading.com</span>
+    </a>
+
+    <!-- Add simple breadcrumbs -->
+    <nav class="article-container py-4 text-sm breadcrumb-container" aria-label="Breadcrumb">
+        <ol class="list-none p-0 inline-flex text-gray-500">
+            <li class="flex items-center">
+                <a href="../index.html" class="hover:text-red-500">Home</a>
+                <span class="mx-2">/</span>
+            </li>
+            <li class="flex items-center">
+                <a href="index.html" class="hover:text-red-500">Articles</a>
+                <span class="mx-2">/</span>
+            </li>
+            <li class="flex items-center">
+                <span class="text-gray-700 breadcrumb-text">How to Use AI Lip Reading on Replicate: A Complete Guide for Beginners</span>
+            </li>
+        </ol>
+    </nav>
+
+    <!-- Article Header -->
+    <header class="article-header">
+        <div class="article-container">
+            <h1 class="article-title">How to Use AI Lip Reading on Replicate: A Complete Guide for Beginners</h1>
+            <div class="article-meta">
+                Last Updated: February 2025
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content Area -->
+    <main class="article-content">
+        <div class="article-container">
+            <!-- Table of Contents -->
+            <div class="toc" id="tableOfContents">
+                <h2 class="text-xl font-bold mb-4">Table of Contents</h2>
+                <ul class="toc-list" id="tocList">
+                    <!-- Dynamically populated by JavaScript -->
+                </ul>
+            </div>
+
+            <!-- Article Content -->
+            <article>
+                <p class="text-lg text-gray-700 mb-8">
+                    Have you ever needed to understand what someone is saying in a video without sound? Maybe you have a video with poor audio quality, or perhaps you're working with footage that has no sound at all. You can now get text transcripts from videos by using AI lip reading technology. It's quicker and more precise than human lip readers. This guide will walk you through how to use this service on a platform called Replicate.
+                </p>
+        
+                <!-- What is Replicate Section -->
+                <h2 class="text-2xl font-semibold text-gray-900 mt-8 mb-4">What is Replicate?</h2>
+                <p class="text-lg text-gray-700 mb-4">
+                    Replicate is a website that hosts various AI tools that anyone can use. Like an app store, but for AI services. You don't need to be tech-savvy or know how to code - you just need to upload your video and the AI will do the rest!
+                </p>
+        
+                <!-- Account Creation Section -->
+                <h2 class="text-2xl font-semibold text-gray-900 mt-8 mb-4">Creating Your Replicate Account</h2>
+                <div class="strategy-box bg-gray-50 p-6 rounded-lg mb-6">
+                    <ul class="example-list space-y-2">
+                        <li>Visit the Replicate website (<a href="https://replicate.com" target="_blank" rel="noopener noreferrer">replicate.com</a>)</li>
+                        <li>Click on the "Sign Up" button in the top right corner</li>
+                        <li>You can sign up using your Google account or your email address</li>
+                        <li>If using email, you'll need to verify your email address by clicking a link sent to your inbox</li>
+                        <li>Once verified, you're ready to start using the service</li>
+                    </ul>
+                </div>
+        
+                <!-- Payment Setup Section -->
+                <h2 class="text-2xl font-semibold text-gray-900 mt-8 mb-4">Setting Up Payment</h2>
+ 
+                <p class="text-lg text-gray-700 mb-4">
+                    Replicate charges per video processed. Before you can use the lip reading service, you'll need to add payment information:
+                </p>
+                <div class="strategy-box bg-gray-50 p-6 rounded-lg mb-6">
+                    <ul class="example-list space-y-2">
+                        <li>Click on your profile picture or icon in the top right corner</li>
+                        <li>Select "Billing" from the menu</li>
+                        <li>Click "Add Payment Method"</li>
+                        <li>Enter your credit card information</li>
+                    </ul>
+                    
+                </div>
+                <p class="mt-4 text-gray-600">
+                    - The service uses secure payment processing<br>
+                    - You only pay for what you use<br>
+                    - Videos typically cost between $0.10 and $0.50 each to process
+                </p>
+        
+                <!-- Using the Service Section -->
+                <h2 class="text-2xl font-semibold text-gray-900 mt-8 mb-4">Using the Lip Reading Service</h2>
+                <div class="strategy-box bg-gray-50 p-6 rounded-lg mb-6">
+                    <ul class="example-list space-y-2">
+                        <li>Go to the <a href="https://replicate.com/basord/lip-reading-ai-vsr" 
+                            class="text-red-400 hover:text-red-300 inline-block" 
+                            target="_blank" 
+                            rel="noopener noreferrer">
+                            lip reading model page
+                         </a></li>
+                        <li>Look for the upload section (usually a box where you can drag and drop files)</li>
+                        <li>Click "Choose File" or drag your video file into the upload area <br/> <span class="font-bold">!!!Links to an URL are not supported, it will only work if you upload the file from your computer/phone!!!</span></li>
+                        <li>Wait for the upload to complete</li>
+                        <li>Click "Run" to start the lip reading process</li>
+                        <li>The system will process your video then provide you the text transcript</li>
+                    </ul>
+                </div>
+                <div class="mt-6">
+                    <img src="replicate-process-finished-result.jpg" alt="Replicate Dashboard Example" class="w-full rounded-lg shadow-md" />
+                    <p class="text-sm text-gray-600 mt-2 text-center">Example of the Replicate dashboard showing a processed video transcript</p>
+                </div>
+        
+                <!-- Video Requirements Section -->
+                <h2 class="text-2xl font-semibold text-gray-900 mt-8 mb-4">Video Requirements for Best Results</h2>
+                
+                <ul class="example-list space-y-2">
+                    <li><span class="font-bold">Length: Between 2 and 40 seconds</span></li>
+                    <li>Maximum resolution: 1080p</li>
+                    <li>File types supported: MP4, MOV, MKV, or WebM</li>
+                    <li><span class="font-bold">Only one person's face should be visible at a time</span> (this is required)</li>
+                    <li>The person's face should be well-lit and clearly visible</li>
+                    <li>The face can be front-view or profile (but at least half the lips must be visible)</li>
+                    <li>Avoid videos where the mouth is covered by masks, hands, or other objects</li>
+                    <li>The closer the camera is to the face, the better (while keeping the full face in frame)</li>
+                    <li><span class="font-bold">!!!Links to an URL are not supported, it will only work if you upload the file from your computer/phone!!!</span></li>
+                </ul>
+                
+        
+
+
+            </article>
+        </div>
+    </main>
+
+    <!-- Related Articles -->
+    <section class="related-articles">
+        <div class="article-container">
+            <h2 class="text-2xl font-bold mb-6">Related Articles</h2>
+            <div class="grid md:grid-cols-2 gap-6">
+                <div class="related-card">
+                    <h3 class="text-xl font-semibold mb-2">Lip Reading Accuracy Statistics</h3>
+                    <p class="text-gray-400">Current state of human and AI lip reading accuracy...</p>
+                    <a href="lip-reading-accuracy-statistics.html" class="text-red-400 hover:text-red-300 mt-4 inline-block">
+                        Read More →
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="relative pb-6 bg-[#01010C]">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-wrap text-left lg:text-left">
+                <div class="w-full lg:w-6/12 px-4">
+                    <div class="mt-6 lg:mb-0 mb-6">
+                        <!-- Social media icons placeholder -->
+                    </div>
+                </div>
+                <div class="w-full lg:w-6/12 px-4">
+                </div>
+            </div>
+            <hr class="my-6 border-gray-700" />
+            <div class="flex flex-wrap items-center justify-center">
+                <div class="w-full flex flex-wrap justify-center items-center gap-4 px-4">
+                    <a href="../index.html" class="text-gray-500 hover:text-gray-300 font-semibold text-sm">Homepage</a>
+                    <a href="index.html" class="text-gray-500 hover:text-gray-300 font-semibold text-sm">Articles</a>              
+                    <a class="text-gray-500 hover:text-gray-300 font-semibold text-sm" href="#" onclick="openContactModal(); return false;">Contact Us</a>
+                    <div class="text-sm text-gray-500 font-semibold py-1 text-center">
+                        Copyright © <span id="get-current-year">2025</span> Lip-Reading.com
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <div id="contactModal" class="fixed inset-0 bg-black bg-opacity-50 z-50 hidden flex items-center justify-center">
+        <div class="bg-white rounded-lg p-4 w-96 relative">
+            <!-- Close button -->
+            <button onclick="closeContactModal()" class="absolute top-2 right-2 text-gray-500 hover:text-gray-700">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                </svg>
+            </button>
+            
+            <!-- Modal content -->
+            <div class="flex justify-center">
+                <img src="contact-info.png" alt="Contact Information" class="max-w-full h-auto rounded-lg" 
+                     onerror="this.src='/api/placeholder/400/300';this.onerror=null;" />
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript for Table of Contents and Progress Bar - Same as previous article -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Generate Table of Contents
+            const headings = document.querySelectorAll('article h2, article h3');
+            const tocList = document.getElementById('tocList');
+            
+            headings.forEach((heading, index) => {
+                if (!heading.id) {
+                    heading.id = heading.tagName.toLowerCase() + '-' + index;
+                }
+                
+                const li = document.createElement('li');
+                const a = document.createElement('a');
+                a.href = '#' + heading.id;
+                a.textContent = heading.textContent;
+                
+                if (heading.tagName === 'H3') {
+                    li.style.paddingLeft = '1rem';
+                }
+                
+                li.appendChild(a);
+                tocList.appendChild(li);
+            });
+
+            // Progress Bar
+            const progressBar = document.getElementById('progressBar');
+
+            window.addEventListener('scroll', () => {
+                const windowHeight = window.innerHeight;
+                const documentHeight = document.documentElement.scrollHeight - windowHeight;
+                const scrolled = window.scrollY;
+                
+                const progress = (scrolled / documentHeight) * 100;
+                progressBar.style.width = progress + '%';
+            });
+
+            // Smooth scroll for TOC links
+            document.querySelectorAll('.toc-list a').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href');
+                    const targetElement = document.querySelector(targetId);
+                    
+                    targetElement.scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                });
+            });
+        });
+
+
+        document.getElementById('get-current-year').textContent = new Date().getFullYear();
+
+        function openContactModal() {
+            document.getElementById('contactModal').classList.remove('hidden');
+            document.body.style.overflow = 'hidden'; // Prevent scrolling when modal is open
+        }
+
+        function closeContactModal() {
+            document.getElementById('contactModal').classList.add('hidden');
+            document.body.style.overflow = ''; // Restore scrolling
+        }
+
+        // Close modal when clicking outside of it
+        document.getElementById('contactModal').addEventListener('click', function(e) {
+            if (e.target === this) {
+                closeContactModal();
+            }
+        });
+
+        // Close modal with Escape key
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape' && !document.getElementById('contactModal').classList.contains('hidden')) {
+                closeContactModal();
+            }
+        });
+
+    </script>
+</body>
+</html>

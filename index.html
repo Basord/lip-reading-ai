@@ -1,0 +1,678 @@
+<!DOCTYPE html>
+<html lang="en" class="h-full">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://accounts.google.com">
+    
+    <!-- Primary Meta Tags -->
+    <title>Lip Reading App</title>
+    <meta name="title" content="Lip Reading App - Read Lips on Videos with AI">
+    <meta name="description" content="With accuracy rates at least 50% higher than skilled human lip readers, our lip reading app offers unparalleled precision in record time.">
+    <meta name="keywords" content="lip reading, AI lip reading, muted sound video transcription, silent video to text, lip read app">
+    <meta name="theme-color" content="#01010C">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://lip-reading.com/">
+    <meta property="og:title" content="AI Lip Reading App - Convert No Sound Videos to Text">
+    <meta property="og:description" content="With accuracy rates at least 50% higher than skilled human lip readers, our lip reading app offers unparalleled precision in record time.">
+    <meta property="og:image" content="/AI-lip-reading-action.jpg">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://lip-reading.com/">
+    <meta property="twitter:title" content="AI Lip Reading App - Convert No Sound Videos to Text">
+    <meta property="twitter:description" content="With accuracy rates at least 50% higher than skilled human lip readers, our lip reading app offers unparalleled precision in record time.">
+    <meta property="twitter:image" content="/AI-lip-reading-action.jpg">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://lip-reading.com/">
+
+    <!-- Styles -->
+    <link href="./public/css/output.css" rel="stylesheet">
+    <script src="https://accounts.google.com/gsi/client" async defer></script>
+    
+    <!-- Schema.org markup -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      "name": "Lip-Reading.com",
+      "url": "https://lip-reading.com/",
+      "applicationCategory": "MultimediaApplication",
+      "operatingSystem": "Any",
+      "description": "AI-powered lip reading web application that automatically converts silent videos to text transcripts with accuracy rates 50% higher than human lip readers. Perfect for processing videos without sound or in noisy environments.",
+      "offers": {
+        "@type": "AggregateOffer",
+        "priceCurrency": "USD",
+        "lowPrice": "0",
+        "highPrice": "15",
+        "offerCount": "2",
+        "offers": [
+          {
+            "@type": "Offer",
+            "name": "Demo Videos Processing",
+            "price": "0",
+            "priceCurrency": "USD",
+            "description": "Process our selection of demo videos for free",
+            "availability": "https://schema.org/InStock"
+          },
+          {
+            "@type": "Offer",
+            "name": "Custom Video Processing",
+            "description": "Process your own videos with pricing based on video length",
+            "priceSpecification": {
+              "@type": "PriceSpecification",
+              "priceCurrency": "USD",
+              "description": "Price varies based on video duration (2-40 seconds)"
+            }
+          }
+        ]
+      },
+      "featureList": [
+        "Automated AI lip reading technology",
+        "Video to text transcription",
+        "Support for MP4, MOV, MKV, and WebM formats",
+        "Processing videos from 2 to 40 seconds",
+        "Secure video storage",
+        "Downloadable transcripts",
+        "Multiple processing speed options"
+      ],
+      "applicationSuite": "Video Processing Tools",
+      "availableOnDevice": "Computer",
+      "browserRequirements": "Requires modern web browser (Chrome, Firefox, Safari, Edge)",
+      "softwareRequirements": "No additional software required",
+      "permissions": "Requires account creation",
+      "keywords": "lip reading, AI lip reading, muted sound video transcription, silent video to text, lip read app",
+      "author": {
+        "@type": "Organization",
+        "name": "Lip-Reading.com"
+      },
+      "potentialAction": {
+        "@type": "UseAction",
+        "target": {
+          "@type": "EntryPoint",
+          "urlTemplate": "https://lip-reading.com/",
+          "actionPlatform": [
+            "http://schema.org/DesktopWebPlatform"
+          ]
+        },
+        "expectsAcceptanceOf": {
+          "@type": "Offer",
+          "description": "Create a free account to access demo videos and paid processing services"
+        }
+      }
+    }
+    </script>
+
+    <style>
+        .logo-text {
+            display: inline-flex;
+            align-items: center;
+        }
+        .logo-gradient {
+            display: inline-block;
+            padding-bottom: 0.1em;
+        }
+        .bg-header {
+            background-image: url('background3.jpg');
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            min-height: 100vh;
+        }
+        .video-container {
+            transform: rotate(-3deg);
+            transition: transform 0.7s ease-in-out;
+        }
+        .video-container:hover {
+            transform: rotate(1deg);
+        }
+        .styled-video {
+            border-radius: 16px;
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        .angled-bg {
+            position: relative;
+            z-index: 1;
+        }
+        .angled-bg::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            right: 0;
+            height: 75px;
+            background: inherit;
+            z-index: -1;
+        }
+        .angled-bg-top::before {
+            top: -75px;
+            transform: skew(0, -2deg);
+            transform-origin: 100% 0;
+        }
+        .angled-bg-bottom::after {
+            content: '';
+            position: absolute;
+            bottom: -75px;
+            left: 0;
+            right: 0;
+            height: 75px;
+            background: inherit;
+            z-index: -1;
+            transform: skew(0, -2deg);
+            transform-origin: 0 100%;
+        }
+        .header-content {
+            min-height: calc(100vh);
+            display: flex;
+            justify-content: center;
+        }
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow-y: auto;
+            background-color: rgba(0,0,0,0.4);
+        }
+        .modal-content {
+            background-color: #fefefe;
+            margin: 2% auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%;
+            max-width: 600px;
+            color: black;
+            position: relative;
+            top: 10%;
+            transform: translateY(-3%);
+        }
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+        .close:hover,
+        .close:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
+        .sign-in-container {
+            display: flex;
+            flex-direction: column;
+            gap: 3px;
+            width: 240px;
+        }
+        .email-sign-in {
+            height: 40px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-weight: bold;
+            font-size: 16px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            background: linear-gradient(to right, #9b0000, #ff6b6b);
+            color: white;
+            border: none;
+            padding: 0 12px;
+            width: 100%;
+        }
+        .email-sign-in:hover {
+            background: linear-gradient(to right, #d63031, #ff6b6b);
+        }
+        .divider {
+            display: flex;
+            align-items: center;
+            text-align: center;
+            color: #404040;
+            font-size: 12px;
+        }
+        .divider::before,
+        .divider::after {
+            content: '';
+            flex: 1;
+            border-bottom: 1px solid #404040;
+        }
+        .divider::before {
+            margin-right: .5em;
+        }
+        .divider::after {
+            margin-left: .5em;
+        }
+        .small-text {
+            color: #888;
+            font-size: 12px;
+            text-align: center;
+        }
+        .arrow-text-overlay {
+            position: absolute;
+            top: 72px;
+            right: 30%;
+            width: 391px;
+            height: 188px;
+            z-index: 10;
+            display: none;
+        }
+        .arrow-text-mob {
+            position: absolute;
+            z-index: 10;
+            width: 308px;
+            height: 89px;
+            display: none;
+            margin-top: 12px;
+            right: 13%;
+        }
+        @media (min-width: 768px) {
+            .header-content {
+                padding-top: 0;
+                padding-bottom: 130px;
+            }
+        }
+        @media (min-width: 1280px) {
+            .arrow-text-overlay {
+                display: block;
+            }
+        }
+        @media (max-width: 1279px) {
+            .arrow-text-mob {
+                display: block;
+            }
+        }
+        @media (max-width: 768px) {
+            .video-container {
+                margin-bottom: 1.5rem;
+            }
+            .arrow-text-mob {
+                right: 0%;
+                margin-top: 2px;
+            }
+        }
+    </style>
+
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-0B2SG21WSS"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-0B2SG21WSS');
+    </script>
+</head>
+<body class="h-full bg-gray-800 text-white">
+    <div class="bg-header flex flex-col">
+        <div class="w-full container mx-auto p-6">
+            <div class="w-full flex items-center justify-between">
+                <a class="flex items-center text-red-300 no-underline hover:no-underline font-bold text-2xl lg:text-4xl logo-text" href="index.html" title="Lip Reading AI - Homepage">
+                    Lip-<span class="logo-gradient bg-clip-text text-transparent bg-gradient-to-r from-red-light via-red-medium to-red-dark">Reading.com</span>
+                </a>
+            </div>
+        </div>
+
+        <div class="container flex-grow px-6 mx-auto flex flex-wrap flex-col md:flex-row items-center justify-center header-content">
+            <div class="flex flex-col w-full xl:w-2/5 justify-center lg:items-start overflow-y-hidden">
+                <h1 class="my-4 text-3xl md:text-5xl text-white opacity-85 font-bold leading-tight text-center md:text-left">
+                    Automated Lip Reading With AI!
+                </h1>
+                <p class="leading-normal text-base md:text-2xl mb-8 text-center md:text-left">
+                    Upload your videos and get accurate transcripts in minutes!
+                </p>
+                
+                <div class="bg-gray-900 bg-opacity-75 w-full shadow-lg px-8 pt-6 pb-8 mb-4">
+                    <div class="mb-4">
+                        <p class="text-lg font-bold leading-relaxed mt-1 mb-4 text-left text-red-300">
+                            Try Lip Reading Now!
+                        </p>
+                        <div class="flex flex-col items-center">
+                            <a href="https://replicate.com/basord/lip-reading-ai-vsr" 
+                               class="email-sign-in w-full text-center" 
+                               target="_blank" 
+                               rel="noopener noreferrer">
+                                Use on Replicate
+                            </a>
+                            <p class="small-text mt-1">Access open source lip reading AI directly through Replicate's platform</p>
+                            <div class="divider w-1/2 h-px my-4"></div>
+                            <a href="./articles/index.html" 
+                               class="email-sign-in w-48 text-center text-sm"
+                               style="background: linear-gradient(to right, #2d3436, #636e72);">
+                                Read Our Blog
+                            </a>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="w-full xl:w-3/5 p-5 md:p-11 lg:p-11 overflow-hidden pt-11">
+                <div class="arrow-text-overlay">
+                    <img src="arrow-text.png" alt="No audio but want to know what is said?" class="w-full h-auto">
+                </div>
+
+                <div class="video-container mx-auto w-full md:w-4/5 md:-mt-6 md:pt-6">
+                    <video class="styled-video w-full" autoplay loop muted playsinline
+                        aria-label="Demonstration of our app"
+                        title="Demo of our app process">
+                        <source src="first-vid.mp4" type="video/mp4">
+                        <p>Your browser does not support the video tag. This video demonstrates how our app works.</p>
+                    </video>
+                </div>
+                <div class="arrow-text-mob">
+                    <img src="arrow-text-mobile.png" alt="No audio but want to know what is said?" class="w-full h-auto">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <section class="py-20 angled-bg angled-bg-top angled-bg-bottom" style="background-color: #01010C;">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-wrap items-center">
+                <div class="w-full md:w-5/12 px-4 mr-auto ml-auto">
+                    <h2 class="text-3xl mb-2 font-semibold leading-normal text-red-300">
+                        Lip Reading accessible to everyone
+                    </h2>
+                    <p class="text-lg font-light leading-relaxed mt-4 mb-4 text-gray-300">
+                        Lip reading has long been a specialized skill, limited to a select few experts. This ability is now accessible to all!
+                    </p>
+                    <p class="text-lg font-light leading-relaxed mt-4 mb-4 text-gray-300">
+                        Easily transcribe any video without sound or in very noisy environments. It only takes a few minutes.
+                    </p>
+                </div>
+
+                <div class="w-full md:w-4/12 px-4 mr-auto ml-auto">
+                    <div class="relative flex flex-col min-w-0 break-words bg-red-300 w-full mb-6 shadow-lg rounded-lg bg-red-500">
+                        <video class="w-full align-middle rounded-t-lg" autoplay loop muted playsinline>
+                            <source src="showcase-lip-reading.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                        <blockquote class="relative p-8 mb-4">
+                            <h3 class="text-xl font-bold text-white">
+                                AI-Enhanced Accuracy
+                            </h3>
+                            <p class="text-md font-light mt-2 text-white">
+                                Advanced AI technology doesn't just match human expertise, but goes beyond it. With accuracy rates at least 50% higher than skilled human lip readers, lip reading AI offers unparalleled precision in record time.
+                            </p>
+                        </blockquote>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="section relative py-20" style="background-color: #01010C;">
+        <div class="bottom-auto top-0 left-0 right-0 w-full absolute pointer-events-none overflow-hidden -mt-20" style="height: 80px;">
+            <svg class="absolute bottom-0 overflow-hidden" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" version="1.1" viewBox="0 0 2560 100" x="0" y="0">
+            <polygon class="text-white fill-current" points="2560 0 2560 100 0 100"></polygon>
+            </svg>
+        </div>
+    
+        <div class="container mx-auto px-4">
+            <div class="items-center flex flex-wrap">
+            <div class="w-full md:w-4/12 ml-auto mr-auto px-4">
+                <img src="AI-lip-reading-action.jpg" alt="Our AI Technology in Action" loading="lazy" class="max-w-full rounded-lg shadow-lg">
+            </div>
+            <div class="w-full md:w-5/12 ml-auto mr-auto px-4">
+                <div class="md:pr-12">
+                <div class="text-red-600 p-3 text-center inline-flex items-center justify-center w-16 h-16 mb-6 shadow-lg rounded-full bg-gradient-to-r from-red-light via-red-medium to-red-dark">
+                    <i class="fas fa-rocket text-xl"></i>
+                </div>
+                <h2 class="text-3xl font-semibold">Does it really work?</h2>
+                <p class="mt-4 text-lg leading-relaxed text-gray-300">
+                    Automated Lip Reading research has been ongoing for decades. But recent advances in AI and Machine Learning have now made it resilient enough to be accurate for regular use.
+                </p>
+                <ul class="list-none mt-6">
+                    <li class="py-2">
+                    <div class="flex items-center">
+                        <div>
+                        <span class="text-xs font-semibold inline-block py-1 px-2 uppercase rounded-full text-pink-600 bg-gradient-to-r from-red-dark via-red-medium to-red-light mr-3"><i class="fas fa-fingerprint"></i></span>
+                        </div>
+                        <div>
+                        <h4 class="text-gray-500">Upload your video</h4>
+                        </div>
+                    </div>
+                    </li>
+                    <li class="py-2">
+                    <div class="flex items-center">
+                        <div>
+                        <span class="text-xs font-semibold inline-block py-1 px-2 uppercase rounded-full text-pink-600 bg-gradient-to-r from-red-dark via-red-medium to-red-light mr-3"><i class="fab fa-html5"></i></span>
+                        </div>
+                        <div>
+                        <h4 class="text-gray-500">Press Start</h4>
+                        </div>
+                    </div>
+                    </li>
+                    <li class="py-2">
+                    <div class="flex items-center">
+                        <div>
+                        <span class="text-xs font-semibold inline-block py-1 px-2 uppercase rounded-full text-pink-600 bg-gradient-to-r from-red-dark via-red-medium to-red-light mr-3"><i class="far fa-paper-plane"></i></span>
+                        </div>
+                        <div>
+                        <h4 class="text-gray-500">Let the AI do the rest!</h4>
+                        </div>
+                    </div>
+                    </li>
+                </ul>
+                </div>
+            </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-20 relative block bg-black text-white">
+        <div class="flex items-center justify-center flex-col gap-y-2 py-5">
+            <h2 class="text-3xl font-semibold">Frequently asked questions</h2>
+            <p class="text-lg font-medium text-gray-500">About our Lip Reading AI services</p>
+        </div>
+        <div class="w-full px-7 md:px-10 xl:px-2 py-4">
+            <div class="mx-auto w-full max-w-5xl border border-gray-700 rounded-lg">
+                <!-- FAQ Item 1 -->
+                <div class="border-b border-gray-700">
+                    <button class="question-btn flex w-full items-start gap-x-5 justify-between rounded-lg text-left text-lg font-semibold text-white focus:outline-none p-5" data-toggle="answer-1">
+                        <h3>How does AI lip reading work?</h3>
+                        <svg stroke="currentColor" fill="#d63031" stroke-width="0" viewBox="0 0 24 24" class="mt-1.5 md:mt-0 flex-shrink-0 h-5 w-5 text-gray-400" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M16.293 9.293 12 13.586 7.707 9.293l-1.414 1.414L12 16.414l5.707-5.707z"></path>
+                        </svg>
+                    </button>
+                    <div class="answer pt-2 pb-5 px-5 text-sm lg:text-base text-gray-400" id="answer-1" style="display: none;">
+                        Just upload a video and let the automated program do the work! <br/> <br/>
+                        Advanced AI and machine learning algorithms analyze lip movements in videos. This technology processes the visual information frame by frame, interpreting the shapes and movements of the speaker's mouth to generate accurate text transcriptions of the spoken words.
+                        <br><br> The process takes between a few seconds for a very short and low resolution video to a few minutes for longer videos with a high resolution. But Replicate computers can sometimes take a few minutes before starting to processs the video.
+                        <br><br> Important note: Make sure your video only include one person's face, otherwise the program will not work properly. If your video contains more than one person's face you will need to crop it first. For more details see our <a href="./articles/ai-lip-reading-on-replicate.html" class="text-red-400 hover:text-red-300 inline-block">blog post about using Replicate.</a>
+                    </div>
+                </div>
+                <!-- FAQ Item 2 -->
+                <div class="border-b border-gray-700">
+                    <button class="question-btn flex w-full items-start gap-x-5 justify-between rounded-lg text-left text-lg font-semibold text-white focus:outline-none p-5" data-toggle="answer-2">
+                        <h3>How precise is it?</h3>
+                        <svg stroke="currentColor" fill="#d63031" stroke-width="0" viewBox="0 0 24 24" class="mt-1.5 md:mt-0 flex-shrink-0 h-5 w-5 text-gray-400" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M16.293 9.293 12 13.586 7.707 9.293l-1.414 1.414L12 16.414l5.707-5.707z"></path>
+                        </svg>
+                    </button>
+                    <div class="answer pt-2 pb-5 px-5 text-sm lg:text-base text-gray-400" id="answer-2" style="display: none;">
+                        It can be quite precise but is heavily dependent on the quality of the video and how visible the lips are. This technology has shown accuracy rates of up to 95% in environments with clear video quality, ample lighting and speakers close to the camera. But real-world scenarios can vary, and factors such as video quality, lighting, lip visibility and facial obstructions can affect accuracy. <a href="./articles/ai-lip-reading-on-replicate.html" class="text-red-400 hover:text-red-300 inline-block">See our Blog post for more details.</a>
+                    </div>
+                </div>
+
+
+
+                <!-- FAQ Item 3 -->
+                <div class="border-b border-gray-700">
+                    <button class="question-btn flex w-full items-start gap-x-5 justify-between rounded-lg text-left text-lg font-semibold text-white focus:outline-none p-5" data-toggle="answer-4">
+                        <h3>What video file formats do you support?</h3>
+                        <svg stroke="currentColor" fill="#d63031" stroke-width="0" viewBox="0 0 24 24" class="mt-1.5 md:mt-0 flex-shrink-0 h-5 w-5 text-gray-400" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M16.293 9.293 12 13.586 7.707 9.293l-1.414 1.414L12 16.414l5.707-5.707z"></path>
+                        </svg>
+                    </button>
+                    <div class="answer pt-2 pb-5 px-5 text-sm lg:text-base text-gray-400" id="answer-4" style="display: none;">
+                        The program currently support MP4, MOV, MKV and WebM video files. You can upload videos on Replicate from any device whether you're on desktop, Android, or iPhone. But videos need to be rannging from 2 seconds to 40 seconds in length. For optimal results, ensure that the speaker's face and mouth are clearly visible in the video. If you have videos in other formats, you will need to convert them before uploading.
+                        <br><br> Important note: Make sure your video only include one person's face, otherwise our program will not work properly. If your video contains more than one person's face you will need to crop it first.
+                    </div>
+                </div>
+
+                <!-- FAQ Item 4 -->
+                <div class="border-b border-gray-700">
+                    <button class="question-btn flex w-full items-start gap-x-5 justify-between rounded-lg text-left text-lg font-semibold text-white focus:outline-none p-5" data-toggle="answer-7">
+                        <h3>What makes a good quality video for an accurate result?</h3>
+                        <svg stroke="currentColor" fill="#d63031" stroke-width="0" viewBox="0 0 24 24" class="mt-1.5 md:mt-0 flex-shrink-0 h-5 w-5 text-gray-400" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M16.293 9.293 12 13.586 7.707 9.293l-1.414 1.414L12 16.414l5.707-5.707z"></path>
+                        </svg>
+                    </button>
+                    <div class="answer pt-2 pb-5 px-5 text-sm lg:text-base text-gray-400" id="answer-7" style="display: none;">
+                        For the best results, it's better your videos meet the following criteria: <br/>
+                        - The speaker's face should be well-lit and clearly visible <br/>
+                        - Both Frontal and profile view of the speaker's face work. But for a profile view, half of the lips should be visible at minimum. <br/>
+                        - Ideally, record in good lighting conditions <br/>
+                        - Avoid videos where the speaker's mouth is obscured (by masks, hands, or objects) <br/>
+                        - The closer the camera is to the speaker's face, the better (while keeping the full face in frame) <br/>
+                        - Only one person face should be visible at the same time. This last criteria is mandatory. <br/>
+                        These conditions will significantly improve the accuracy of the transcription.
+                    </div>
+                </div>
+
+                <!-- FAQ Item 5 -->
+                <div class="border-b border-gray-700">
+                    <button class="question-btn flex w-full items-start gap-x-5 justify-between rounded-lg text-left text-lg font-semibold text-white focus:outline-none p-5" data-toggle="answer-5">
+                        <h3>What are the costs for using the lip reading service?</h3>
+                        <svg stroke="currentColor" fill="#d63031" stroke-width="0" viewBox="0 0 24 24" class="mt-1.5 md:mt-0 flex-shrink-0 h-5 w-5 text-gray-400" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M16.293 9.293 12 13.586 7.707 9.293l-1.414 1.414L12 16.414l5.707-5.707z"></path>
+                        </svg>
+                    </button>
+                    <div class="answer pt-2 pb-5 px-5 text-sm lg:text-base text-gray-400" id="answer-5" style="display: none;">
+                        The service is provided through Replicate's platform, which uses a pay-as-you-go pricing model. You pay for Replicate computers to process your video with the AI. The exact cost depends on the length and quality of your video.
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+    </section>
+
+    <section class="py-20 angled-bg angled-bg-top" style="background-color: #01010C;">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-wrap items-center justify-center">
+                <div class="w-full md:w-6/12 px-4">
+                    <h2 class="text-3xl mb-2 font-semibold leading-normal text-center text-red-300">
+                        Ready to Get Started?
+                    </h2>
+                    <p class="text-lg font-light leading-relaxed mt-4 mb-4 text-center text-gray-300">
+                        Try it now and see for yourself!
+                    </p>
+                    <div class="flex flex-col items-center mt-8">
+                        <a href="https://replicate.com/basord/lip-reading-ai-vsr" 
+                           class="email-sign-in w-64 text-center" 
+                           target="_blank" 
+                           rel="noopener noreferrer">
+                            Try on Replicate
+                        </a>
+                        <div class="divider text-gray-500 mb-1">or</div>
+                        
+                        <a href="./articles/index.html" 
+                            class="email-sign-in w-32 text-center text-sm"
+                            style="background: linear-gradient(to right, #2d3436, #636e72);">
+                            Read Our Blog
+                        </a>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="relative pb-6 bg-[#01010C]">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-wrap text-left lg:text-left">
+                <div class="w-full lg:w-6/12 px-4">
+                    <div class="mt-6 lg:mb-0 mb-6">
+                        <!-- Social media icons placeholder -->
+                    </div>
+                </div>
+                <div class="w-full lg:w-6/12 px-4">
+                </div>
+            </div>
+            <hr class="my-6 border-gray-700" />
+            <div class="flex flex-wrap items-center justify-center">
+                <div class="w-full flex flex-wrap justify-center items-center gap-4 px-4">
+                    <a href="index.html" class="text-gray-500 hover:text-gray-300 font-semibold text-sm">Homepage</a>
+                    <a href="./articles/index.html" class="text-gray-500 hover:text-gray-300 font-semibold text-sm">Articles</a>              
+                    <a class="text-gray-500 hover:text-gray-300 font-semibold text-sm" href="#" onclick="openContactModal(); return false;">Contact Us</a>
+                    <div class="text-sm text-gray-500 font-semibold py-1 text-center">
+                        Copyright © <span id="get-current-year">2025</span> Lip-Reading.com
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <div id="contactModal" class="fixed inset-0 bg-black bg-opacity-50 z-50 hidden flex items-center justify-center">
+        <div class="bg-white rounded-lg p-4 w-96 relative">
+            <!-- Close button -->
+            <button onclick="closeContactModal()" class="absolute top-2 right-2 text-gray-500 hover:text-gray-700">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                </svg>
+            </button>
+            
+            <!-- Modal content -->
+            <div class="flex justify-center">
+                <img src="contact-info.png" alt="Contact Information" class="max-w-full h-auto rounded-lg" 
+                     onerror="this.src='/api/placeholder/400/300';this.onerror=null;" />
+            </div>
+        </div>
+    </div>
+
+    <script>
+
+        document.getElementById('get-current-year').textContent = new Date().getFullYear();
+
+
+        document.addEventListener('DOMContentLoaded', function() {
+            const questionBtns = document.querySelectorAll('.question-btn');
+            
+            questionBtns.forEach(btn => {
+                btn.addEventListener('click', function() {
+                    const answerId = this.getAttribute('data-toggle');
+                    const answerElement = document.getElementById(answerId);
+                    
+                    if (answerElement.style.display === 'none') {
+                        answerElement.style.display = 'block';
+                        this.querySelector('svg').style.transform = 'rotate(180deg)';
+                    } else {
+                        answerElement.style.display = 'none';
+                        this.querySelector('svg').style.transform = 'rotate(0deg)';
+                    }
+                });
+            });
+
+            document.getElementById('year').textContent = new Date().getFullYear();
+        });
+
+        function openContactModal() {
+            document.getElementById('contactModal').classList.remove('hidden');
+            document.body.style.overflow = 'hidden'; // Prevent scrolling when modal is open
+        }
+
+        function closeContactModal() {
+            document.getElementById('contactModal').classList.add('hidden');
+            document.body.style.overflow = ''; // Restore scrolling
+        }
+
+        // Close modal when clicking outside of it
+        document.getElementById('contactModal').addEventListener('click', function(e) {
+            if (e.target === this) {
+                closeContactModal();
+            }
+        });
+
+        // Close modal with Escape key
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape' && !document.getElementById('contactModal').classList.contains('hidden')) {
+                closeContactModal();
+            }
+        });
+    </script>
+</body>
+</html>
