@@ -18,6 +18,8 @@ Running the model requires a Replicate account.
 
 ## Guides
 
+- [How to Lip Read](https://lip-reading.com/articles/how-to-lip-read): evidence-based guide to learning lipreading - how much of speech is visible, what the training research shows about realistic gains, practice methods that generalise, and where to take classes.
+
 - [How to Use AI Lip Reading on Replicate](https://lip-reading.com/articles/ai-lip-reading-on-replicate): step-by-step setup, account creation, payment, and the video requirements that affect accuracy.
 - [Why Are Some Sounds Hard to Lip Read?](https://lip-reading.com/articles/confusing-sounds-when-lip-reading): visemes and confusable sound groups (P/B/M, F/V, K/G, TH/DH), why they look alike on the lips, and recognition strategies.
 
