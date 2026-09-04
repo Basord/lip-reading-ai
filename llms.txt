@@ -1,0 +1,30 @@
+# Lip-Reading.com
+
+> AI lip reading: upload a video with no usable audio and get a text transcript
+> generated from the speaker's lip movements. The model runs on Replicate; the
+> site itself is documentation, guides and research summaries about visual
+> speech recognition.
+
+How it works: a visual speech recognition model reads mouth movements frame by
+frame and outputs text. Accuracy depends heavily on video conditions — lighting,
+resolution, how much of the lips are visible, and whether the speaker's mouth is
+obstructed. Only one face may be visible in the frame. Supported formats are MP4,
+MOV, MKV and WebM, for clips between 2 and 40 seconds.
+
+Pricing is pay-as-you-go through Replicate, based on video length and quality.
+Running the model requires a Replicate account.
+
+## Guides
+
+- [How to Use AI Lip Reading on Replicate](https://lip-reading.com/articles/ai-lip-reading-on-replicate): step-by-step setup, account creation, payment, and the video requirements that affect accuracy.
+- [Why Are Some Sounds Hard to Lip Read?](https://lip-reading.com/articles/confusing-sounds-when-lip-reading): visemes and confusable sound groups (P/B/M, F/V, K/G, TH/DH), why they look alike on the lips, and recognition strategies.
+
+## Research and analysis
+
+- [Lip Reading Accuracy Statistics: Humans vs AI](https://lip-reading.com/articles/lip-reading-accuracy-statistics): compares human lip reading accuracy against automated systems, with citations to arXiv, PubMed, ASHA and Springer.
+- [Lip Reading and Privacy: Real Risks and Protections](https://lip-reading.com/articles/lip-reading-privacy-risks): technical limits that constrain surveillance use, environmental factors that defeat lip reading, and who realistically needs to be concerned.
+
+## Contact
+
+- Email: lipreadingcontact@gmail.com
+- Model on Replicate: https://replicate.com/basord/lip-reading-ai-vsr

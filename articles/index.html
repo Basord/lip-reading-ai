@@ -15,6 +15,8 @@
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://lip-reading.com/articles/">
+    <meta property="og:image" content="https://lip-reading.com/AI-lip-reading-action.jpg">
+    <meta property="twitter:image" content="https://lip-reading.com/AI-lip-reading-action.jpg">
     <meta property="og:title" content="Lip Reading Articles and Guides">
     <meta property="og:description" content="Expert articles and comprehensive guides about lip reading, from basic techniques to advanced AI-powered solutions.">
     
@@ -28,7 +30,7 @@
     
     <!-- Schema.org markup for articles list -->
     <script type="application/ld+json">
-    {
+{
         "@context": "https://schema.org",
         "@type": "CollectionPage",
         "headline": "Lip Reading Articles and Guides",
@@ -37,7 +39,29 @@
         "publisher": {
             "@type": "Organization",
             "name": "Lip-Reading.com"
-        }
+        },
+        "image": "https://lip-reading.com/AI-lip-reading-action.jpg"
+    }
+    </script>
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://lip-reading.com/"
+            },
+            {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Articles",
+                "item": "https://lip-reading.com/articles/"
+            }
+        ]
     }
     </script>
 
@@ -51,6 +75,18 @@
             padding-bottom: 0.1em;
         }
     </style>
+    <!-- Favicons -->
+    <link rel="icon" href="/favicon.ico" sizes="any">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-0B2SG21WSS"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-0B2SG21WSS');
+    </script>
 </head>
 <body class="bg-gray-900 text-white h-screen flex flex-col">
     <!-- Header/Logo Section -->
