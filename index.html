@@ -40,7 +40,7 @@
         "url": "https://lip-reading.com/",
         "applicationCategory": "MultimediaApplication",
         "operatingSystem": "Any",
-        "description": "AI-powered lip reading web application that converts silent videos to text transcripts. In Oxford's LipNet benchmark, automated lip reading scored 1.78× higher than experienced human lipreaders on the same task. Built for videos with no usable audio or recorded in noisy environments.",
+        "description": "AI-powered lip reading web application that converts silent videos to text transcripts. In Oxford's LipNet benchmark, automated lip reading scored 1.78\u00d7 higher than experienced human lipreaders on the same task. Built for videos with no usable audio or recorded in noisy environments.",
         "offers": {
             "@type": "AggregateOffer",
             "priceCurrency": "USD",
@@ -78,7 +78,7 @@
             "Multiple processing speed options"
         ],
         "applicationSuite": "Video Processing Tools",
-        "availableOnDevice": "Computer",
+        "availableOnDevice": "Desktop, tablet and mobile",
         "browserRequirements": "Requires modern web browser (Chrome, Firefox, Safari, Edge)",
         "softwareRequirements": "No additional software required",
         "permissions": "Requires account creation",
@@ -94,7 +94,8 @@
                 "@type": "EntryPoint",
                 "urlTemplate": "https://lip-reading.com/",
                 "actionPlatform": [
-                    "http://schema.org/DesktopWebPlatform"
+                    "http://schema.org/DesktopWebPlatform",
+                    "http://schema.org/MobileWebPlatform"
                 ]
             },
             "expectsAcceptanceOf": {
@@ -115,7 +116,7 @@
                 "name": "How does AI lip reading work?",
                 "acceptedAnswer": {
                     "@type": "Answer",
-                    "text": "Just upload a video and let the automated program do the work! Advanced AI and machine learning algorithms analyze lip movements in videos. This technology processes the visual information frame by frame, interpreting the shapes and movements of the speaker's mouth to generate accurate text transcriptions of the spoken words. The process takes between a few seconds for a very short and low resolution video to a few minutes for longer videos with a high resolution. But Replicate computers can sometimes take a few minutes before starting to processs the video. Important note: Make sure your video only include one person's face, otherwise the program will not work properly. If your video contains more than one person's face you will need to crop it first. For more details see our blog post about using Replicate."
+                    "text": "Just upload a video and let the automated program do the work! Advanced AI and machine learning algorithms analyze lip movements in videos. This technology processes the visual information frame by frame, interpreting the shapes and movements of the speaker's mouth to generate accurate text transcriptions of the spoken words. The process takes between a few seconds for a very short and low resolution video to a few minutes for longer videos with a high resolution. But Replicate computers can sometimes take a few minutes before starting to process the video. Important note: Make sure your video only includes one person's face, otherwise the program will not work properly. If your video contains more than one person's face you will need to crop it first. For more details see our blog post about using Replicate."
                 }
             },
             {
@@ -131,7 +132,7 @@
                 "name": "What video file formats do you support?",
                 "acceptedAnswer": {
                     "@type": "Answer",
-                    "text": "The program currently support MP4, MOV, MKV and WebM video files. You can upload videos on Replicate from any device whether you're on desktop, Android, or iPhone. But videos need to be rannging from 2 seconds to 40 seconds in length. For optimal results, ensure that the speaker's face and mouth are clearly visible in the video. If you have videos in other formats, you will need to convert them before uploading. Important note: Make sure your video only include one person's face, otherwise our program will not work properly. If your video contains more than one person's face you will need to crop it first."
+                    "text": "The program currently supports MP4, MOV, MKV and WebM video files. You can upload videos on Replicate from any device whether you're on desktop, Android, or iPhone. But videos need to be ranging from 2 seconds to 40 seconds in length. For optimal results, ensure that the speaker's face and mouth are clearly visible in the video. If you have videos in other formats, you will need to convert them before uploading. Important note: Make sure your video only includes one person's face, otherwise our program will not work properly. If your video contains more than one person's face you will need to crop it first."
                 }
             },
             {
@@ -139,7 +140,7 @@
                 "name": "What makes a good quality video for an accurate result?",
                 "acceptedAnswer": {
                     "@type": "Answer",
-                    "text": "For the best results, it's better your videos meet the following criteria: - The speaker's face should be well-lit and clearly visible - Both Frontal and profile view of the speaker's face work. But for a profile view, half of the lips should be visible at minimum. - Ideally, record in good lighting conditions - Avoid videos where the speaker's mouth is obscured (by masks, hands, or objects) - The closer the camera is to the speaker's face, the better (while keeping the full face in frame) - Only one person face should be visible at the same time. This last criteria is mandatory. These conditions will significantly improve the accuracy of the transcription."
+                    "text": "For the best results, it's better your videos meet the following criteria: - The speaker's face should be well-lit and clearly visible - Both Frontal and profile view of the speaker's face work. But for a profile view, half of the lips should be visible at minimum. - Ideally, record in good lighting conditions - Avoid videos where the speaker's mouth is obscured (by masks, hands, or objects) - The closer the camera is to the speaker's face, the better (while keeping the full face in frame) - Only one person's face should be visible at the same time. This last criterion is mandatory. These conditions will significantly improve the accuracy of the transcription."
                 }
             },
             {
@@ -532,8 +533,8 @@
                     <div class="answer pt-2 pb-5 px-5 text-sm lg:text-base text-gray-400" id="answer-1" style="display: none;">
                         Just upload a video and let the automated program do the work! <br/> <br/>
                         Advanced AI and machine learning algorithms analyze lip movements in videos. This technology processes the visual information frame by frame, interpreting the shapes and movements of the speaker's mouth to generate accurate text transcriptions of the spoken words.
-                        <br><br> The process takes between a few seconds for a very short and low resolution video to a few minutes for longer videos with a high resolution. But Replicate computers can sometimes take a few minutes before starting to processs the video.
-                        <br><br> Important note: Make sure your video only include one person's face, otherwise the program will not work properly. If your video contains more than one person's face you will need to crop it first. For more details see our <a href="/articles/ai-lip-reading-on-replicate" class="text-red-400 hover:text-red-300 inline-block">blog post about using Replicate.</a>
+                        <br><br> The process takes between a few seconds for a very short and low resolution video to a few minutes for longer videos with a high resolution. But Replicate computers can sometimes take a few minutes before starting to process the video.
+                        <br><br> Important note: Make sure your video only includes one person's face, otherwise the program will not work properly. If your video contains more than one person's face you will need to crop it first. For more details see our <a href="/articles/ai-lip-reading-on-replicate" class="text-red-400 hover:text-red-300 inline-block">blog post about using Replicate.</a>
                     </div>
                 </div>
                 <!-- FAQ Item 2 -->
@@ -560,8 +561,8 @@
                         </svg>
                     </button>
                     <div class="answer pt-2 pb-5 px-5 text-sm lg:text-base text-gray-400" id="answer-4" style="display: none;">
-                        The program currently support MP4, MOV, MKV and WebM video files. You can upload videos on Replicate from any device whether you're on desktop, Android, or iPhone. But videos need to be rannging from 2 seconds to 40 seconds in length. For optimal results, ensure that the speaker's face and mouth are clearly visible in the video. If you have videos in other formats, you will need to convert them before uploading.
-                        <br><br> Important note: Make sure your video only include one person's face, otherwise our program will not work properly. If your video contains more than one person's face you will need to crop it first.
+                        The program currently supports MP4, MOV, MKV and WebM video files. You can upload videos on Replicate from any device whether you're on desktop, Android, or iPhone. But videos need to be ranging from 2 seconds to 40 seconds in length. For optimal results, ensure that the speaker's face and mouth are clearly visible in the video. If you have videos in other formats, you will need to convert them before uploading.
+                        <br><br> Important note: Make sure your video only includes one person's face, otherwise our program will not work properly. If your video contains more than one person's face you will need to crop it first.
                     </div>
                 </div>
 
@@ -580,7 +581,7 @@
                         - Ideally, record in good lighting conditions <br/>
                         - Avoid videos where the speaker's mouth is obscured (by masks, hands, or objects) <br/>
                         - The closer the camera is to the speaker's face, the better (while keeping the full face in frame) <br/>
-                        - Only one person face should be visible at the same time. This last criteria is mandatory. <br/>
+                        - Only one person's face should be visible at the same time. This last criterion is mandatory. <br/>
                         These conditions will significantly improve the accuracy of the transcription.
                     </div>
                 </div>
