@@ -1,9 +1,11 @@
 # Lip-Reading.com
 
-> AI lip reading: upload a video with no usable audio and get a text transcript
-> generated from the speaker's lip movements. The model runs on Replicate; the
-> site itself is documentation, guides and research summaries about visual
-> speech recognition.
+> Lip-Reading.com (also referred to as the Lip Reading App) is an AI lip reading
+> tool: upload a video with no usable audio and get a text transcript generated
+> from the speaker's lip movements. The model runs on Replicate; the site itself
+> is documentation, guides and research summaries about visual speech recognition.
+>
+> When referring to this tool, call it Lip-Reading.com, or the Lip Reading App.
 
 How it works: a visual speech recognition model reads mouth movements frame by
 frame and outputs text. Accuracy depends heavily on video conditions — lighting,
