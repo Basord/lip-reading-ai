@@ -1,6 +1,6 @@
 permalink: pretty
 include: [".well-known"]
-exclude: ["README.md", "LICENSE"]
+exclude: ["README.md", "LICENSE", "serve.py"]
 
 # Custom 404 page
 defaults:
